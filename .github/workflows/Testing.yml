@@ -7,11 +7,11 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
-    runs-on: macos-latest
-
+  test:
+    name: Testing iOS app
+    runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Testing iOS app
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Testing iOS app
         run: exec ./.github/scripts/test_app.sh

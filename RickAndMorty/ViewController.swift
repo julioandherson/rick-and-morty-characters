@@ -11,16 +11,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // MOCK TEST
-        let worker = CharacterWorker().fetchCharacter() { result in
-            switch result {
-            case .success(let characterResponse):
-                print("SUCCESS: \(characterResponse)")
-            case .failure(let error):
-                print("ERROR: \(error)")
-            }
-        }
     }
 }
 

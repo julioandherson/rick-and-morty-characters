@@ -5,3 +5,12 @@
 ![Tests Status](https://github.com/julioandherson/rick-and-morty-characters/actions/workflows/Testing.yml/badge.svg)
 
 # rick-and-morty-characters
+
+## TODO List:
+- Create VIP struct
+- Create programmatically view
+- Create table view to display characters information
+- Use KingFisher to display images
+- Create extension to handler loading
+- Create tests
+- Add R.Swift framework

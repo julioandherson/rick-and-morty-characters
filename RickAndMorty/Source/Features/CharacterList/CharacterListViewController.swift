@@ -17,7 +17,15 @@ class CharacterListViewController: UIViewController {
     // MARK: - VIP Properties
     
     var interactor: CharacterListInteractorProtocol!
+    
+    private let characterListView = CharacterListView()
 
+    // MARK: - Life Cycle
+    
+    override func loadView() {
+        self.view = characterListView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,8 +34,9 @@ class CharacterListViewController: UIViewController {
 }
 
 extension CharacterListViewController: CharacterListViewControllerProtocol {
-    
+
     func showCharacterList(_ characterList: [Character]) {
         print("Characters: \(characterList)")
+        characterListView.setup(characterList)
     }
 }

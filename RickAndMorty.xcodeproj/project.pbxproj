@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		7E621174206D59604495CBE4 /* Pods_RickAndMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE91030A2076BB166DB2B13F /* Pods_RickAndMorty.framework */; };
 		C948E6EEB1FE406241B29C30 /* Pods_RickAndMortyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04352C651724C6F3FCD74045 /* Pods_RickAndMortyTests.framework */; };
+		E062EC4A264CAF5F00978581 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E062EC49264CAF5F00978581 /* ViewCodeProtocol.swift */; };
+		E062EC50264CAFE800978581 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E062EC4F264CAFE800978581 /* CharacterListView.swift */; };
+		E062EC58264CB4A700978581 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E062EC57264CB4A700978581 /* CharacterCell.swift */; };
+		E062EC61264CBA6600978581 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E062EC60264CBA6600978581 /* UITableViewCell+Extensions.swift */; };
 		E0C35A4A2641E617004354F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C35A492641E617004354F6 /* AppDelegate.swift */; };
 		E0C35A4C2641E617004354F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C35A4B2641E617004354F6 /* SceneDelegate.swift */; };
-		E0C35A512641E617004354F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C35A4F2641E617004354F6 /* Main.storyboard */; };
 		E0C35A532641E619004354F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C35A522641E619004354F6 /* Assets.xcassets */; };
 		E0C35A562641E619004354F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0C35A542641E619004354F6 /* LaunchScreen.storyboard */; };
 		E0C35A612641E61A004354F6 /* RickAndMortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C35A602641E61A004354F6 /* RickAndMortyTests.swift */; };
@@ -55,10 +58,13 @@
 		8F934833BC444AB22B624AC4 /* Pods-RickAndMorty-RickAndMortyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty-RickAndMortyUITests.release.xcconfig"; path = "Target Support Files/Pods-RickAndMorty-RickAndMortyUITests/Pods-RickAndMorty-RickAndMortyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BE91030A2076BB166DB2B13F /* Pods_RickAndMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05259D99B8FD7201D3F6385 /* Pods-RickAndMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty.release.xcconfig"; path = "Target Support Files/Pods-RickAndMorty/Pods-RickAndMorty.release.xcconfig"; sourceTree = "<group>"; };
+		E062EC49264CAF5F00978581 /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
+		E062EC4F264CAFE800978581 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
+		E062EC57264CB4A700978581 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		E062EC60264CBA6600978581 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		E0C35A462641E617004354F6 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C35A492641E617004354F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0C35A4B2641E617004354F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E0C35A502641E617004354F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0C35A522641E619004354F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0C35A552641E619004354F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0C35A572641E619004354F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -132,6 +138,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E062EC4E264CAFC200978581 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E062EC57264CB4A700978581 /* CharacterCell.swift */,
+				E062EC4F264CAFE800978581 /* CharacterListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E062EC5F264CBA0200978581 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E062EC60264CBA6600978581 /* UITableViewCell+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E0C35A3D2641E617004354F6 = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +185,6 @@
 				E0E2181C264825D4004F2706 /* Resource */,
 				E0C35A492641E617004354F6 /* AppDelegate.swift */,
 				E0C35A4B2641E617004354F6 /* SceneDelegate.swift */,
-				E0C35A4F2641E617004354F6 /* Main.storyboard */,
 				E0C35A572641E619004354F6 /* Info.plist */,
 			);
 			path = RickAndMorty;
@@ -218,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				E0E2182C26482A06004F2706 /* Common */,
+				E062EC5F264CBA0200978581 /* Extensions */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -226,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				E0E21830264836DE004F2706 /* CharacterError.swift */,
+				E062EC49264CAF5F00978581 /* ViewCodeProtocol.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -267,6 +291,7 @@
 		E0E21B30264A0526004F2706 /* CharacterList */ = {
 			isa = PBXGroup;
 			children = (
+				E062EC4E264CAFC200978581 /* View */,
 				E0E21B4B264A0C46004F2706 /* CharacterListBuilder.swift */,
 				E0E21B36264A07BD004F2706 /* CharacterListInteractor.swift */,
 				E0E21B43264A0810004F2706 /* CharacterListPresenter.swift */,
@@ -385,7 +410,6 @@
 			files = (
 				E0C35A562641E619004354F6 /* LaunchScreen.storyboard in Resources */,
 				E0C35A532641E619004354F6 /* Assets.xcassets in Resources */,
-				E0C35A512641E617004354F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,10 +537,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E062EC58264CB4A700978581 /* CharacterCell.swift in Sources */,
 				E0E21B4C264A0C46004F2706 /* CharacterListBuilder.swift in Sources */,
 				E0E2182726482959004F2706 /* NetworkingManager.swift in Sources */,
+				E062EC50264CAFE800978581 /* CharacterListView.swift in Sources */,
 				E0E21B32264A0710004F2706 /* CharacterListViewController.swift in Sources */,
 				E0C35A4A2641E617004354F6 /* AppDelegate.swift in Sources */,
+				E062EC4A264CAF5F00978581 /* ViewCodeProtocol.swift in Sources */,
 				E0E21B44264A0810004F2706 /* CharacterListPresenter.swift in Sources */,
 				E0E21831264836DE004F2706 /* CharacterError.swift in Sources */,
 				E0E21B37264A07BD004F2706 /* CharacterListInteractor.swift in Sources */,
@@ -524,6 +551,7 @@
 				E0E2183F264997EC004F2706 /* CharacterListResponse.swift in Sources */,
 				E0E21837264997D3004F2706 /* CharacterWorker.swift in Sources */,
 				E0E2184526499882004F2706 /* Character.swift in Sources */,
+				E062EC61264CBA6600978581 /* UITableViewCell+Extensions.swift in Sources */,
 				E0E2184A2649A470004F2706 /* CharacterInfoResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,14 +588,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E0C35A4F2641E617004354F6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E0C35A502641E617004354F6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E0C35A542641E619004354F6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

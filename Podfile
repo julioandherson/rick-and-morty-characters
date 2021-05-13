@@ -7,6 +7,7 @@ target 'RickAndMorty' do
 
   # Pods for RickAndMorty
   pod 'Alamofire', '5.4.3'
+  pod 'Kingfisher', '~> 6.0'
   pod 'SnapKit', '5.0.1'
 
   target 'RickAndMortyTests' do

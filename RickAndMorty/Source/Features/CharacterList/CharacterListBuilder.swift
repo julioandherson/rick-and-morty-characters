@@ -10,10 +10,7 @@ import UIKit
 struct CharacterListBuilder {
     
     static func build() -> UIViewController {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "CharacterListViewController")
-            as? CharacterListViewController ?? CharacterListViewController()
-
+        let viewController = CharacterListViewController()
         let interactor = CharacterListInteractor()
         let presenter = CharacterListPresenter()
         

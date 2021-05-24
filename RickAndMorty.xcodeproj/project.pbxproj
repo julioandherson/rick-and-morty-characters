@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7E621174206D59604495CBE4 /* Pods_RickAndMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE91030A2076BB166DB2B13F /* Pods_RickAndMorty.framework */; };
 		C948E6EEB1FE406241B29C30 /* Pods_RickAndMortyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04352C651724C6F3FCD74045 /* Pods_RickAndMortyTests.framework */; };
+		E003EF33265B34BE0095AF14 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E003EF32265B34BE0095AF14 /* UIImageView+Extensions.swift */; };
 		E062EC4A264CAF5F00978581 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E062EC49264CAF5F00978581 /* ViewCodeProtocol.swift */; };
 		E062EC50264CAFE800978581 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E062EC4F264CAFE800978581 /* CharacterListView.swift */; };
 		E062EC58264CB4A700978581 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E062EC57264CB4A700978581 /* CharacterCell.swift */; };
@@ -58,6 +59,7 @@
 		8F934833BC444AB22B624AC4 /* Pods-RickAndMorty-RickAndMortyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty-RickAndMortyUITests.release.xcconfig"; path = "Target Support Files/Pods-RickAndMorty-RickAndMortyUITests/Pods-RickAndMorty-RickAndMortyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BE91030A2076BB166DB2B13F /* Pods_RickAndMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05259D99B8FD7201D3F6385 /* Pods-RickAndMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty.release.xcconfig"; path = "Target Support Files/Pods-RickAndMorty/Pods-RickAndMorty.release.xcconfig"; sourceTree = "<group>"; };
+		E003EF32265B34BE0095AF14 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		E062EC49264CAF5F00978581 /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
 		E062EC4F264CAFE800978581 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		E062EC57264CB4A700978581 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		E062EC5F264CBA0200978581 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E003EF32265B34BE0095AF14 /* UIImageView+Extensions.swift */,
 				E062EC60264CBA6600978581 /* UITableViewCell+Extensions.swift */,
 			);
 			path = Extensions;
@@ -541,6 +544,7 @@
 				E0E21B4C264A0C46004F2706 /* CharacterListBuilder.swift in Sources */,
 				E0E2182726482959004F2706 /* NetworkingManager.swift in Sources */,
 				E062EC50264CAFE800978581 /* CharacterListView.swift in Sources */,
+				E003EF33265B34BE0095AF14 /* UIImageView+Extensions.swift in Sources */,
 				E0E21B32264A0710004F2706 /* CharacterListViewController.swift in Sources */,
 				E0C35A4A2641E617004354F6 /* AppDelegate.swift in Sources */,
 				E062EC4A264CAF5F00978581 /* ViewCodeProtocol.swift in Sources */,

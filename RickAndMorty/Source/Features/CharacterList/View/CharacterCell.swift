@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import Kingfisher
 
 class CharacterCell: UITableViewCell {
     
@@ -19,8 +18,8 @@ class CharacterCell: UITableViewCell {
     
     private lazy var name: UILabel = {
         let label = UILabel()
-        label.textAlignment = .left
         label.font = .systemFont(ofSize: 16)
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -36,7 +35,7 @@ class CharacterCell: UITableViewCell {
     }
     
     func setup(character: Character) {
-        characterImage.kf.setImage(with: URL(string: character.image))
+        characterImage.load(url: character.image)
         name.text = character.name
     }
 }
@@ -50,16 +49,20 @@ extension CharacterCell: ViewCodeProtocol {
     
     func setupConstraints() {
         characterImage.snp.makeConstraints { make in
-            make.height.equalTo(30)
-            make.width.equalTo(30)
-            make.top.left.equalTo(8)
-            make.bottom.right.equalTo(8)
+            make.height.equalTo(100)
+            make.width.equalTo(100)
+            make.top.left.equalTo(safeAreaLayoutGuide).offset(16)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(16)
         }
 
         name.snp.makeConstraints { make in
-            make.left.equalTo(characterImage).offset(16)
-            make.top.equalTo(8)
-            make.bottom.equalTo(8)
+            make.left.equalTo(characterImage.snp.right).offset(8)
+            make.top.equalTo(safeAreaLayoutGuide).inset(8)
+            make.bottom.equalTo(safeAreaLayoutGuide).offset(8)
         }
+    }
+    
+    func setupComponents() {
+        backgroundColor = .white
     }
 }

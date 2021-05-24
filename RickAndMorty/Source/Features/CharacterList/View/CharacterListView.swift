@@ -10,15 +10,24 @@ import SnapKit
 
 class CharacterListView: UIView {
     
+    // MARK: - User Interface Components
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.allowsSelection = true
         return tableView
     }()
     
+    // MARK: - Private Properties
+    
     private var characterList: [Character] = []
     
-    init() {
+    private unowned let delegate: CharacterListViewDelegate
+    
+    // MARK: - Inits
+    
+    init(_ delegate: CharacterListViewDelegate) {
+        self.delegate = delegate
         super.init(frame: .zero)
         setupUI()
     }
@@ -27,11 +36,21 @@ class CharacterListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public Functions
+    
     func setup(_ characterList: [Character] ) {
         self.characterList = characterList
         tableView.reloadData()
     }
+    
+    // MARK: - Private Functions
+    
+    private func selectCharacter(at index: Int) {
+        delegate.selectCharacter(at: index)
+    }
 }
+
+// MARK: - ViewCodeProtocol Extension
 
 extension CharacterListView: ViewCodeProtocol {
 
@@ -53,11 +72,9 @@ extension CharacterListView: ViewCodeProtocol {
     }
 }
 
-extension CharacterListView: UITableViewDelegate, UITableViewDataSource {
+// MARK: - UITableViewDelegate Extension
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characterList.count
-    }
+extension CharacterListView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = CharacterCell.identifier
@@ -69,5 +86,18 @@ extension CharacterListView: UITableViewDelegate, UITableViewDataSource {
         cell.setup(character: characterList[indexPath.item])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectCharacter(at: indexPath.item)
+    }
+}
+
+// MARK: - UITableViewDataSource Extension
+
+extension CharacterListView: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return characterList.count
     }
 }

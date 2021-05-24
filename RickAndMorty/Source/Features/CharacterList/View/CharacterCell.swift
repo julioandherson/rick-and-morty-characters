@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 class CharacterCell: UITableViewCell {
+        
+    // MARK: - User Interface Components
     
     private lazy var characterImage: UIImageView = {
         let imageView = UIImageView(frame: .zero)
@@ -23,8 +25,13 @@ class CharacterCell: UITableViewCell {
         return label
     }()
     
+    // MARK: - Public Properties
+    
     static let identifier = String(describing: CharacterCell.self)
     
+    
+    // MARK: - Inits
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -34,11 +41,15 @@ class CharacterCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public Functions
+    
     func setup(character: Character) {
         characterImage.load(url: character.image)
         name.text = character.name
     }
 }
+
+// MARK: - ViewCodeProtocol Extension
 
 extension CharacterCell: ViewCodeProtocol {
 

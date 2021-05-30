@@ -9,6 +9,8 @@ import UIKit
 
 struct CharacterListBuilder {
     
+    // MARK: - Public Functions
+    
     static func build() -> UIViewController {
         let viewController = CharacterListViewController()
         let interactor = CharacterListInteractor()

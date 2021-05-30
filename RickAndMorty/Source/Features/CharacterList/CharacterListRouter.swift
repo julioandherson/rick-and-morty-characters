@@ -32,8 +32,7 @@ class CharacterListRouter: CharacterListRouterProtocol, CharacterListDataPassing
     func proceedToCharacterDetails() {        
         guard let character = dataStore.character else { return }
         
-        print("Character Selected: \(character.name)")
-        
-        // TODO: Navigate to new screen
+        let detailsScene = CharacterDetailsBuilder.build(character)
+        viewController.navigationController?.pushViewController(detailsScene, animated: true)
     }
 }

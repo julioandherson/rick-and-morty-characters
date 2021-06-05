@@ -10,7 +10,15 @@
 - ~~Create VIP struct~~
 - ~~Create programmatically view struct using SnapKit~~
 - ~~Use KingFisher to load and display images~~
-- Create table view to display characters information
+- ~~Create table view to display characters information~~
+- ~~Create characters details~~
 - Create extension to handler loading
+- Create pagination
+- Create search bar
+- Create style to display character details
+- Create database to store favorites characters
+- Implement action to favorite character
+- Create tab to display favorite characters
+- Handler requests errors
 - Create tests
 - Add R.Swift framework

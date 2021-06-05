@@ -18,7 +18,13 @@ class CharacterListViewController: UIViewController {
     
     var interactor: CharacterListInteractorProtocol!
     
-    private let characterListView = CharacterListView()
+    var router: CharacterListRouterProtocol!
+    
+    // MARK: - Private Properties
+    
+    private lazy var characterListView: CharacterListView = {
+        return CharacterListView(self)
+    }()
 
     // MARK: - Life Cycle
     
@@ -33,10 +39,21 @@ class CharacterListViewController: UIViewController {
     }
 }
 
+// MARK: - CharacterListViewControllerProtocol Extension
+
 extension CharacterListViewController: CharacterListViewControllerProtocol {
 
     func showCharacterList(_ characterList: [Character]) {
-        print("Characters: \(characterList)")
         characterListView.setup(characterList)
+    }
+}
+
+// MARK: - CharacterListViewDelegate Extension
+
+extension CharacterListViewController: CharacterListViewDelegate {
+
+    func selectCharacter(at index: Int) {
+        interactor.select(at: index)
+        router.proceedToCharacterDetails()
     }
 }

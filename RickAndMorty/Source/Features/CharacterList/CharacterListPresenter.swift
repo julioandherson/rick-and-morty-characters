@@ -18,6 +18,8 @@ class CharacterListPresenter: CharacterListPresenterProtocol {
     
     weak var viewController: CharacterListViewControllerProtocol!
     
+    // MARK: - Public Functions
+    
     func showCharacterList(_ characterList: [Character]) {
         viewController.showCharacterList(characterList)
     }

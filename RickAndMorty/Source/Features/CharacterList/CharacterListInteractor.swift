@@ -7,9 +7,16 @@
 
 import Foundation
 
-protocol CharacterListInteractorProtocol {
+protocol CharacterListDataStoreProtocol {
+    
+    var character: Character? { get set }
+}
+
+protocol CharacterListInteractorProtocol: CharacterListDataStoreProtocol {
     
     func fetchCharacter()
+    
+    func select(at index: Int)
 }
 
 class CharacterListInteractor: CharacterListInteractorProtocol {
@@ -18,7 +25,17 @@ class CharacterListInteractor: CharacterListInteractorProtocol {
     
     var presenter: CharacterListPresenterProtocol!
     
+    // MARK: - Public Properties
+    
+    var character: Character?
+    
+    // MARK: - Private Properties
+    
     private let characterWorker: CharacterWorkerProtocol
+    
+    private var characterList: [Character] = []
+    
+    // MARK: - Inits
     
     init() {
         characterWorker = CharacterWorker()
@@ -27,6 +44,8 @@ class CharacterListInteractor: CharacterListInteractorProtocol {
     init(characterWorker: CharacterWorkerProtocol) {
         self.characterWorker = characterWorker
     }
+    
+    // MARK: - Public Functions
     
     func fetchCharacter() {
         characterWorker.fetchCharacter { [weak self] result in
@@ -39,9 +58,15 @@ class CharacterListInteractor: CharacterListInteractorProtocol {
         }
     }
     
+    func select(at index: Int) {
+        character = characterList[index]
+    }
+    
     // MARK: - Private Functions
+
     private func didFetchSuccess(_ response: CharacterListResponse) {
         let characterList = response.results
+        self.characterList.append(contentsOf: characterList)
         presenter.showCharacterList(characterList)
     }
     

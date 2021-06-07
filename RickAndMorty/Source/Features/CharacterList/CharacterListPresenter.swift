@@ -10,6 +10,10 @@ import Foundation
 protocol CharacterListPresenterProtocol {
     
     func showCharacterList(_ characterList: [Character])
+    
+    func showLoading()
+    
+    func hideLoading()
 }
 
 class CharacterListPresenter: CharacterListPresenterProtocol {
@@ -22,5 +26,13 @@ class CharacterListPresenter: CharacterListPresenterProtocol {
     
     func showCharacterList(_ characterList: [Character]) {
         viewController.showCharacterList(characterList)
+    }
+    
+    func showLoading() {
+        viewController.showLoading()
+    }
+    
+    func hideLoading() {
+        viewController.hideLoading()
     }
 }

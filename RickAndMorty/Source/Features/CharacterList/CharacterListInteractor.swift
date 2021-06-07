@@ -48,6 +48,8 @@ class CharacterListInteractor: CharacterListInteractorProtocol {
     // MARK: - Public Functions
     
     func fetchCharacter() {
+        presenter.showLoading()
+
         characterWorker.fetchCharacter { [weak self] result in
             switch result {
             case .success(let characterResponse):
@@ -65,12 +67,15 @@ class CharacterListInteractor: CharacterListInteractorProtocol {
     // MARK: - Private Functions
 
     private func didFetchSuccess(_ response: CharacterListResponse) {
+        presenter.hideLoading()
+        
         let characterList = response.results
         self.characterList.append(contentsOf: characterList)
         presenter.showCharacterList(characterList)
     }
     
     private func didFetchFailure(_ error: CharacterError) {
+        presenter.hideLoading()
         // Presenter show error
     }
 }

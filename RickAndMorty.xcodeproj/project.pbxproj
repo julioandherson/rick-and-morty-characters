@@ -19,6 +19,8 @@
 		E062EC50264CAFE800978581 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E062EC4F264CAFE800978581 /* CharacterListView.swift */; };
 		E062EC58264CB4A700978581 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E062EC57264CB4A700978581 /* CharacterCell.swift */; };
 		E062EC61264CBA6600978581 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E062EC60264CBA6600978581 /* UITableViewCell+Extensions.swift */; };
+		E0BDF466266BDD7900CCEA78 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BDF465266BDD7900CCEA78 /* UIViewController+Extensions.swift */; };
+		E0BDF468266BDE9E00CCEA78 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BDF467266BDE9E00CCEA78 /* UIColor+Extensions.swift */; };
 		E0C35A4A2641E617004354F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C35A492641E617004354F6 /* AppDelegate.swift */; };
 		E0C35A4C2641E617004354F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C35A4B2641E617004354F6 /* SceneDelegate.swift */; };
 		E0C35A532641E619004354F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C35A522641E619004354F6 /* Assets.xcassets */; };
@@ -76,6 +78,8 @@
 		E062EC4F264CAFE800978581 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		E062EC57264CB4A700978581 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		E062EC60264CBA6600978581 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		E0BDF465266BDD7900CCEA78 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		E0BDF467266BDE9E00CCEA78 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		E0C35A462641E617004354F6 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C35A492641E617004354F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0C35A4B2641E617004354F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 			children = (
 				E003EF32265B34BE0095AF14 /* UIImageView+Extensions.swift */,
 				E062EC60264CBA6600978581 /* UITableViewCell+Extensions.swift */,
+				E0BDF465266BDD7900CCEA78 /* UIViewController+Extensions.swift */,
+				E0BDF467266BDE9E00CCEA78 /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -580,6 +586,7 @@
 				E062EC58264CB4A700978581 /* CharacterCell.swift in Sources */,
 				E0E21B4C264A0C46004F2706 /* CharacterListBuilder.swift in Sources */,
 				E0E2182726482959004F2706 /* NetworkingManager.swift in Sources */,
+				E0BDF468266BDE9E00CCEA78 /* UIColor+Extensions.swift in Sources */,
 				E062EC50264CAFE800978581 /* CharacterListView.swift in Sources */,
 				E003EF33265B34BE0095AF14 /* UIImageView+Extensions.swift in Sources */,
 				E0E21B32264A0710004F2706 /* CharacterListViewController.swift in Sources */,
@@ -589,6 +596,7 @@
 				E0E21B44264A0810004F2706 /* CharacterListPresenter.swift in Sources */,
 				E0E21831264836DE004F2706 /* CharacterError.swift in Sources */,
 				E04410472663CB7B00C68812 /* CharacterDetailsPresenter.swift in Sources */,
+				E0BDF466266BDD7900CCEA78 /* UIViewController+Extensions.swift in Sources */,
 				E0E21B37264A07BD004F2706 /* CharacterListInteractor.swift in Sources */,
 				E0C35A4C2641E617004354F6 /* SceneDelegate.swift in Sources */,
 				E04410452663CB6E00C68812 /* CharacterDetailsInteractor.swift in Sources */,

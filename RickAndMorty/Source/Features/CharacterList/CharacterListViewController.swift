@@ -10,6 +10,10 @@ import UIKit
 protocol CharacterListViewControllerProtocol: AnyObject {
     
     func showCharacterList(_ characterList: [Character])
+    
+    func showLoading()
+    
+    func hideLoading()
 }
 
 class CharacterListViewController: UIViewController {

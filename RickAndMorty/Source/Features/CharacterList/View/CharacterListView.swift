@@ -14,7 +14,6 @@ class CharacterListView: UIView {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.allowsSelection = true
         return tableView
     }()
     

@@ -13,7 +13,7 @@
 - ~~Create table view to display characters information~~
 - ~~Create characters details~~
 - ~~Create extension to handler loading~~
-- Create pagination
+- ~~Create pagination~~
 - Create search bar
 - Create style to display character details
 - Create database to store favorites characters

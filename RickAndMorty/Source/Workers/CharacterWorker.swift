@@ -11,14 +11,16 @@ typealias CharacterListResult = (Result<CharacterListResponse, CharacterError>) 
 
 protocol CharacterWorkerProtocol {
     
-    func fetchCharacter(completion: @escaping CharacterListResult)
+    func fetchCharacter(page: Int, completion: @escaping CharacterListResult)
 }
 
 class CharacterWorker: CharacterWorkerProtocol {
     
-    let url = "https://rickandmortyapi.com/api/character"
+    private let baseURL = "https://rickandmortyapi.com/api/character"
     
-    func fetchCharacter(completion: @escaping CharacterListResult) {
+    func fetchCharacter(page: Int, completion: @escaping CharacterListResult) {
+        let url = "\(baseURL)/?page=\(page)"
+        
         NetworkingManager.request(url: url) { result in
             completion(result)
         }

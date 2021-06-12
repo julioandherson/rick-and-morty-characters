@@ -10,4 +10,6 @@ import Foundation
 protocol CharacterListViewDelegate: AnyObject {
     
     func selectCharacter(at index: Int)
+    
+    func didDisplayEndList()
 }

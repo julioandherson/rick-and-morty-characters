@@ -16,6 +16,8 @@ protocol CharacterListInteractorProtocol: CharacterListDataStoreProtocol {
     
     func fetchCharacter()
     
+    func fetchNextPage()
+    
     func select(at index: Int)
 }
 
@@ -35,6 +37,10 @@ class CharacterListInteractor: CharacterListInteractorProtocol {
     
     private var characterList: [Character] = []
     
+    private var currentPage = 1
+    
+    private var totalPages = 0
+    
     // MARK: - Inits
     
     init() {
@@ -48,13 +54,22 @@ class CharacterListInteractor: CharacterListInteractorProtocol {
     // MARK: - Public Functions
     
     func fetchCharacter() {
-        characterWorker.fetchCharacter { [weak self] result in
+        presenter.showLoading()
+        
+        characterWorker.fetchCharacter(page: currentPage) { [weak self] result in
             switch result {
             case .success(let characterResponse):
                 self?.didFetchSuccess(characterResponse)
             case .failure(let error):
                 self?.didFetchFailure(error)
             }
+        }
+    }
+    
+    func fetchNextPage() {
+        if currentPage + 1 < totalPages {
+            currentPage += 1
+            fetchCharacter()
         }
     }
     
@@ -65,12 +80,17 @@ class CharacterListInteractor: CharacterListInteractorProtocol {
     // MARK: - Private Functions
 
     private func didFetchSuccess(_ response: CharacterListResponse) {
+        presenter.hideLoading()
+        
+        totalPages = response.info.pages
+
         let characterList = response.results
         self.characterList.append(contentsOf: characterList)
         presenter.showCharacterList(characterList)
     }
     
     private func didFetchFailure(_ error: CharacterError) {
+        presenter.hideLoading()
         // Presenter show error
     }
 }

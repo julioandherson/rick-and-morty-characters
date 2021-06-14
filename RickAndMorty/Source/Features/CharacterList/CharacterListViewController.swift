@@ -10,6 +10,10 @@ import UIKit
 protocol CharacterListViewControllerProtocol: AnyObject {
     
     func showCharacterList(_ characterList: [Character])
+    
+    func showLoading()
+    
+    func hideLoading()
 }
 
 class CharacterListViewController: UIViewController {
@@ -37,6 +41,12 @@ class CharacterListViewController: UIViewController {
         
         interactor.fetchCharacter()
     }
+    
+    // MARK: - Private Functions
+    
+    private func fetchNextPage() {
+        interactor.fetchNextPage()
+    }
 }
 
 // MARK: - CharacterListViewControllerProtocol Extension
@@ -55,5 +65,9 @@ extension CharacterListViewController: CharacterListViewDelegate {
     func selectCharacter(at index: Int) {
         interactor.select(at: index)
         router.proceedToCharacterDetails()
+    }
+    
+    func didDisplayEndList() {
+        fetchNextPage()
     }
 }

@@ -14,7 +14,6 @@ class CharacterListView: UIView {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.allowsSelection = true
         return tableView
     }()
     
@@ -39,7 +38,8 @@ class CharacterListView: UIView {
     // MARK: - Public Functions
     
     func setup(_ characterList: [Character] ) {
-        self.characterList = characterList
+        self.characterList.append(contentsOf: characterList)
+        
         tableView.reloadData()
     }
     
@@ -90,6 +90,12 @@ extension CharacterListView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectCharacter(at: indexPath.item)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == characterList.count {
+            delegate.didDisplayEndList()
+        }
     }
 }
 

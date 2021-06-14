@@ -75,5 +75,6 @@ extension CharacterCell: ViewCodeProtocol {
     
     func setupComponents() {
         backgroundColor = .white
+        selectionStyle = .none
     }
 }

@@ -54,6 +54,7 @@ class CharacterListViewController: UIViewController {
 extension CharacterListViewController: CharacterListViewControllerProtocol {
 
     func showCharacterList(_ characterList: [Character]) {
+        print(characterList)
         characterListView.setup(characterList)
     }
 }

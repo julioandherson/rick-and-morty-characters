@@ -8,6 +8,12 @@
 import UIKit
 import SnapKit
 
+enum CharacterStatus: String {
+    case alive = "Alive"
+    case dead = "Dead"
+    case unknown = "unknown"
+}
+
 class CharacterCell: UITableViewCell {
         
     // MARK: - User Interface Components
@@ -20,7 +26,34 @@ class CharacterCell: UITableViewCell {
     
     private lazy var name: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16)
+        label.font = .boldSystemFont(ofSize: 16)
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
+    
+    private lazy var statusIndicator: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private lazy var status: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14)
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
+    
+    private lazy var species: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14)
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
+    
+    private lazy var gender: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14)
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
@@ -46,6 +79,21 @@ class CharacterCell: UITableViewCell {
     func setup(character: Character) {
         characterImage.load(url: character.image)
         name.text = character.name
+        
+        let characterStatus = CharacterStatus(rawValue: character.status)
+        status.text = characterStatus?.rawValue.capitalized
+        
+        switch characterStatus {
+        case .alive:
+            statusIndicator.image = #imageLiteral(resourceName: "GreenFilledCircle")
+        case .dead:
+            statusIndicator.image = #imageLiteral(resourceName: "RedFilledCircle")
+        default:
+            statusIndicator.image = #imageLiteral(resourceName: "GrayFilledCircle")
+        }
+        
+        species.text = " - \(character.species)"
+        gender.text = character.gender
     }
 }
 
@@ -56,6 +104,10 @@ extension CharacterCell: ViewCodeProtocol {
     func setupSubviews() {
         addSubview(characterImage)
         addSubview(name)
+        addSubview(statusIndicator)
+        addSubview(status)
+        addSubview(species)
+        addSubview(gender)
     }
     
     func setupConstraints() {
@@ -68,8 +120,29 @@ extension CharacterCell: ViewCodeProtocol {
 
         name.snp.makeConstraints { make in
             make.left.equalTo(characterImage.snp.right).offset(8)
-            make.top.equalTo(safeAreaLayoutGuide).inset(8)
-            make.bottom.equalTo(safeAreaLayoutGuide).offset(8)
+            make.top.equalTo(safeAreaLayoutGuide).inset(16)
+        }
+        
+        statusIndicator.snp.makeConstraints { make in
+            make.height.equalTo(12)
+            make.width.equalTo(12)
+            make.left.equalTo(characterImage.snp.right).offset(8)
+            make.top.equalTo(name.snp.bottom).offset(8)
+        }
+        
+        status.snp.makeConstraints { make in
+            make.top.equalTo(name.snp.bottom).offset(6)
+            make.left.equalTo(statusIndicator.snp.right).offset(4)
+        }
+        
+        species.snp.makeConstraints { make in
+            make.top.equalTo(name.snp.bottom).offset(6)
+            make.left.equalTo(status.snp.right).offset(0)
+        }
+        
+        gender.snp.makeConstraints { make in
+            make.left.equalTo(characterImage.snp.right).offset(8)
+            make.top.equalTo(statusIndicator.snp.bottom).offset(6)
         }
     }
     

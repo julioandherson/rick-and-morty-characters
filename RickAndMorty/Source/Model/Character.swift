@@ -11,6 +11,8 @@ struct Character: Decodable {
     
     let name: String
     
+    let status: String
+    
     let species: String
     
     let type: String
